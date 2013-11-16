@@ -111,7 +111,8 @@ Layout
     width:400px;
     float:left;
     text-align:center;
-    
+
+
 }
 
 
@@ -121,12 +122,12 @@ House
 #house-background {
     background-image:url('../images/House-background.jpg');
     background-repeat:no-repeat;
-    height:513px;
-    width:369px;
+    height:650px;
+    width:700px;
     margin:0px auto;
 }
 
-#room-view {
+#roomview {
     width:338px;
     height:469px;
     position:relative;

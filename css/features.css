@@ -1,0 +1,33 @@
+/*-------------------------------------------------------------------------------------------------
+Room picker
+-------------------------------------------------------------------------------------------------*/
+.room {
+    cursor:pointer;
+    width:200px;
+    height:150px;
+    border:1px solid #eee;
+    float:left;
+    margin-right:5px;
+}
+
+#blue-room {
+    background-image:url('../images/blue-room.jpg');
+}
+
+#purple-room {
+    background-image:url('../images/purple-room.jpg');
+}
+
+#silver-room {
+    background-image:url('../images/silver-room.jpg');
+}
+
+#beige-room {
+    background-image:url('../images/Beige-Room-300x203.jpeg');
+}
+
+
+#red-room {
+    background-image:url('../images/red-room.jpg');
+}
+

@@ -29,6 +29,14 @@
         <!-- Texture picture -->
         <h2>Select Available room </h2>
 
+        <div class='room' id='blue-room'></div>
+        <div class='room' id='purple-room'></div>
+        <div class='room' id='silver-room'></div>
+        <div class='room' id='beige-room'></div>
+        <div class='room' id='red-room'></div>
+        <div class='room'></div>
+
+
         <!--Room Amneties -->
         <h2>Amenities:</h2>
         <!-- Message -->
@@ -48,7 +56,7 @@
     <div id='preview'>
 
          <div id=house-background>
-             <div id='room-view'> </div>
+             <div id='roomview'> </div>
              <div id ='amenities'></div>
          </div>
          <div id='ad-message'>

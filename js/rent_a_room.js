@@ -8,11 +8,16 @@ and refer them to the one-pager view that is filled out in just few clicks.
 
 
 
-//2. Select Available room pictures from gallery
 
-$('room').click(function(){
-    var room_that_was_clicked=$(this).css('background-image');
-    $('#canvas').css('background-image', texture_that_was_clicked);
+/*-------------------------------------------------------------------------------------------------
+ 2. Select Available room pictures from gallery
+ -------------------------------------------------------------------------------------------------*/
+
+$('.room').click(function(){
+    var chosen_room=$(this).css('background-color');
+
+    // Change the background color of the canvas
+    $('#roomview').css('background-color', chosen_room);
 
 
 
