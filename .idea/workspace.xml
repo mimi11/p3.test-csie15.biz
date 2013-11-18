@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/blue-room.jpg" afterPath="$PROJECT_DIR$/images/blue-room.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/red-room.jpg" afterPath="$PROJECT_DIR$/images/red-room.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/features.css" afterPath="$PROJECT_DIR$/css/features.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/rent_a_room.js" afterPath="$PROJECT_DIR$/js/rent_a_room.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="p3.test-csie15.biz.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384640178406" ignored="false" />
-    <file path="/rent_a_room.js" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384642635074" ignored="false" />
+    <file path="/index.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384724045738" ignored="false" />
+    <file path="/rent_a_room.js" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384724136000" ignored="false" />
     <file path="/main.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384639160655" ignored="false" />
-    <file path="/Dummy.txt" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384638967791" ignored="false" />
-    <file path="/features.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384640108987" ignored="false" />
+    <file path="/Dummy.txt" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384725276409" ignored="false" />
+    <file path="/features.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384721066017" ignored="false" />
+    <file path="$PROJECT_DIR$/../p2.test-csie15.biz/controllers/c_users.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384725500613" ignored="false" />
+    <file path="/v_users_bio.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384725668895" ignored="false" />
+    <file path="$PROJECT_DIR$/../p2.test-csie15.biz/views/v_users_bio.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384725672420" ignored="false" />
+    <file path="$PROJECT_DIR$/../p2.test-csie15.biz/views/v_users_profile.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384725891836" ignored="false" />
+    <file path="/v_users_profile.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384725873880" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,57 +40,38 @@
       <file leaf-file-name="features.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/features.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="48" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
+            <state line="13" column="51" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="4" selection-start="3711" selection-end="3727" vertical-scroll-proportion="0.9551569">
+            <state line="122" column="20" selection-start="3420" selection-end="3420" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rent_a_room.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="29" selection-start="1354" selection-end="1354" vertical-scroll-proportion="-10.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rent_a_room.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/rent_a_room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+            <state line="27" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="0.6053812">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="purple-room.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/purple-room.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="red-room.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/red-room.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="silver-room.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/silver-room.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blue-room.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/blue-room.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -114,9 +94,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/features.css" />
+        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/rent_a_room.js" />
-        <option value="$PROJECT_DIR$/css/main.css" />
       </list>
     </option>
   </component>
@@ -209,20 +189,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p3.test-csie15.biz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p3.test-csie15.biz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -235,7 +201,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../p2.test-csie15.biz" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -276,7 +242,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.6700143" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496361" sideWeight="0.6700143" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -377,38 +343,38 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/features.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="48" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/House-background.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/features.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="51" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="20" selection-start="3420" selection-end="3420" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="30" selection-start="1410" selection-end="1410" vertical-scroll-proportion="1.0697675">
+        <state line="61" column="29" selection-start="1354" selection-end="1354" vertical-scroll-proportion="-10.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/rent_a_room.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+        <state line="27" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="0.6053812">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="4" selection-start="3711" selection-end="3727" vertical-scroll-proportion="0.9551569">
-          <folding />
         </state>
       </provider>
     </entry>

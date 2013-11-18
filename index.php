@@ -39,6 +39,8 @@
 
         <!--Room Amneties -->
         <h2>Amenities:</h2>
+
+
         <!-- Message -->
         <h2>Room Ad message here</h2>
 
@@ -57,6 +59,7 @@
 
          <div id=house-background>
              <div id='roomview'> </div>
+             <div id= 'rent'></div>
              <div id ='amenities'></div>
          </div>
          <div id='ad-message'>
