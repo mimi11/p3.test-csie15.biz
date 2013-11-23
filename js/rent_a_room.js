@@ -31,6 +31,59 @@ $('.room').click(function(){
 
 
 });
+
+
+
+/*-------------------------------------------------------------------------------------------------
+ Contact
+ -------------------------------------------------------------------------------------------------*/
+$('.contact').click(function() {
+
+    // Which radio button was clicked?
+    // (Note here how we're storing a whole element in a variable... cool, huh?)
+    var radio_button = $(this);
+
+    // What is the label next to (i.e. after) that radio
+    var label = radio_button.next();
+
+    // Now that we know the label, grab the text inside of it (That's our message!)
+    var message = label.html();
+
+    $('#contact-info').html(message);
+
+});
+
+
+
+/*-------------------------------------------------------------------------------------------------
+ posting title
+ -------------------------------------------------------------------------------------------------*/
+$('#post').keyup(function() {
+
+    // Figure out what the user typed in
+    var post = $(this).val();
+
+    // Inject the recipient into the output div on the card
+    $('#posting_title').html(post);
+
+    // How long was the recipient?
+    var length = post_Title.length;
+
+    // If it was 20 characters, that's the max, so inject an error message
+    if(length == 20) {
+        $('#post-error').html("Max characters: 20");
+    }
+    // Otherwise, we're all good, clear the error message
+    else {
+        $('#post-error').html("");
+    }
+
+});
+
+
+
+
+
 /*-----------------------------------------------------------------------------------------
 
    3. Amneties
@@ -70,5 +123,3 @@ room_data['beige-room'] = {
     security:225,
     last_month:450
 };
-
-

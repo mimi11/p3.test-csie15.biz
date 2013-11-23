@@ -9,6 +9,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    
 
 </head>
 
@@ -22,9 +23,19 @@
     <!-- Left side with all the controls -->
     <div id='controls'>
 
-        <!-- Ad Background color picker -->
-        <h2>Pick Background Color </h2>
+        <!-- Title of your post -->
+        <h2>Posting title </h2>
+        <input type='text' id='post' maxlength="20">
+        <span class='error' id='post-error'></span>
 
+
+        <!-- Specific location / City-->
+        <h2>Location </h2>
+        <!-- Specific location / City-->
+        <h2>Zip Code </h2>
+
+        <!-- Message -->
+        <h2>Room Ad message here</h2>
 
         <!-- Texture picture -->
         <h2>Select Available room </h2>
@@ -37,19 +48,24 @@
         <div class='room'></div>
 
 
-        <!--Room Amneties -->
-        <h2>Amenities:</h2>
 
+        <br>
+        <br>
+        <!-- Contact info -->
+        <h2>Landlord Contact info</h2>
 
-        <!-- Message -->
-        <h2>Room Ad message here</h2>
+        <!--Options to contact Landlord-->
+        <input type='radio' class='contact' name='contact' id='email'>
+        <label for='email'>&nbsp;Email:cmelhorn@g.harvard.edu</label><br>
 
+        <input type='radio' class='contact' name='contact' id='phone'>
+        <label for='phone'>&nbsp;Phone:617-123-4568</label><br>
 
-        <!-- Move in Requirements -->
-        <h2>Move-in Requirements</h2>
+        <input type='radio' class='contact' name='contact' id='skype'>
+        <label for='skype'>&nbsp;skypeID: MissLandlady</label><br>
 
-
-
+        <!--Search for MBTA lines nearby -->
+        <h2>Bus line :</h2>
 
 
     </div>
@@ -58,23 +74,23 @@
     <div id='preview'>
 
          <div id=house-background>
+             <div id='posting_title'></div>
              <div id='roomview'> </div>
              <div id= 'rent'></div>
              <div id ='amenities'></div>
+             <div id='contact-info'></div>
          </div>
          <div id='ad-message'>
              <div id='rentValues'></div>
              <div id='rentRequirements'></div>
              <div id='rentMessage'></div>
-         </div>
+          </div>
+    </div>
 
         <!-- Buttons -->
         <input type='button' id='refresh-btn' value='Start over'>
         <input type='button' id='print-btn' value='Print'>
-    </div>
-
 </div>
-
 <script src="js/rent_a_room.js"></script>
 
 </body>

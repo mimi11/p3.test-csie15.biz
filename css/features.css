@@ -31,3 +31,31 @@ Room picker
     background-image:url('../images/red-room.jpg');
 }
 
+#contac-info{
+    text-align:center;
+    font-size:35px;
+    position:absolute;
+    top:100px;
+    height:50px;
+    width:100%;
+
+
+
+}
+/*-------------------------------------------------------------------------------------------------
+Recipient
+-------------------------------------------------------------------------------------------------*/
+#posting-title {
+    text-align:center;
+    font-size:30px;
+    width:100%;
+
+    top:150px;
+}
+
+#post-error {
+    color:red;
+}
+
+
+
