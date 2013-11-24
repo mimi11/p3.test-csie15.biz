@@ -9,7 +9,35 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9j0FUz8QHzaJDPLFxQuHlhpM7vBj5DU0&sensor=false">
+    </script>
+
+    <script>
+
+        var myCenter=new google.maps.LatLng(42.432772,-71.072309);
+        var marker;
+
+        function initialize()
+        {
+            var mapProp = {
+                center:myCenter,
+                zoom:15,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            marker=new google.maps.Marker({
+                position:myCenter
+               // animation:google.maps.Animation.BOUNCE
+            });
+
+            marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
 
 </head>
 
@@ -25,12 +53,16 @@
 
         <!-- Title of your post -->
         <h2>Posting title </h2>
-        <input type='text' id='post' maxlength="20">
+        <input type='text' id='post' maxlength="40">
         <span class='error' id='post-error'></span>
 
 
         <!-- Specific location / City-->
         <h2>Location </h2>
+
+        <input type='text' id='location' maxlength="30">
+        <span class='error' id='location-error'></span>
+
         <!-- Specific location / City-->
         <h2>Zip Code </h2>
 
@@ -76,6 +108,8 @@
          <div id=house-background>
              <div id='posting_title'></div>
              <div id='roomview'> </div>
+             <div id= 'location_output'></div>
+             <div id="googleMap" style="width:500px;height:380px;"></div>
              <div id= 'rent'></div>
              <div id ='amenities'></div>
              <div id='contact-info'></div>

@@ -70,8 +70,8 @@ $('#post').keyup(function() {
     var length = post_Title.length;
 
     // If it was 20 characters, that's the max, so inject an error message
-    if(length == 20) {
-        $('#post-error').html("Max characters: 20");
+    if(length == 40) {
+        $('#post-error').html("Max characters: 40");
     }
     // Otherwise, we're all good, clear the error message
     else {
@@ -82,6 +82,31 @@ $('#post').keyup(function() {
 
 
 
+
+/*-------------------------------------------------------------------------------------------------
+ Location title
+ -------------------------------------------------------------------------------------------------*/
+$('#location').keyup(function() {
+
+    // Figure out what the user typed in
+    var post = $(this).val();
+
+    // Inject the recipient into the output div on the card
+    $('#location_output').html(post);
+
+    // How long was the recipient?
+    var length = location_output.length;
+
+    // If it was 20 characters, that's the max, so inject an error message
+    if(length == 30) {
+        $('#location-error').html("Max characters: 40");
+    }
+    // Otherwise, we're all good, clear the error message
+    else {
+        $('#location-error').html("");
+    }
+
+});
 
 
 /*-----------------------------------------------------------------------------------------

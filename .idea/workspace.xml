@@ -9,11 +9,11 @@
     </list>
     <ignored path="p3.test-csie15.biz.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385092292201" ignored="false" />
-    <file path="/rent_a_room.js" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385089166043" ignored="false" />
+    <file path="/index.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385228458294" ignored="false" />
+    <file path="/rent_a_room.js" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385228295268" ignored="false" />
     <file path="/main.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384639160655" ignored="false" />
     <file path="/Dummy.txt" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1384990621731" ignored="false" />
-    <file path="/features.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385090743576" ignored="false" />
+    <file path="/features.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385228528644" ignored="false" />
     <file path="$PROJECT_DIR$/../p2.test-csie15.biz/controllers/c_users.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385082226468" ignored="false" />
     <file path="/v_users_bio.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385082379027" ignored="false" />
     <file path="$PROJECT_DIR$/../p2.test-csie15.biz/views/v_users_bio.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385082456734" ignored="false" />
@@ -41,10 +41,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="features.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="features.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/features.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="13" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
+            <state line="63" column="23" selection-start="1272" selection-end="1272" vertical-scroll-proportion="1.4231927">
               <folding />
             </state>
           </provider>
@@ -53,17 +53,19 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="20" selection-start="3420" selection-end="3420" vertical-scroll-proportion="0.0">
+            <state line="125" column="16" selection-start="3527" selection-end="3527" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="4" selection-start="392" selection-end="392" vertical-scroll-proportion="0.2921875">
-              <folding />
+            <state line="110" column="40" selection-start="3042" selection-end="3042" vertical-scroll-proportion="-18.0">
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,7 +73,7 @@
       <file leaf-file-name="rent_a_room.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/rent_a_room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="33" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.0">
+            <state line="88" column="12" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -98,9 +100,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/css/features.css" />
         <option value="$PROJECT_DIR$/js/rent_a_room.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/css/features.css" />
       </list>
     </option>
   </component>
@@ -356,21 +358,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="20" selection-start="3420" selection-end="3420" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/features.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="13" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
+        <state line="125" column="16" selection-start="3527" selection-end="3527" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/rent_a_room.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="33" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.0">
+        <state line="88" column="12" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -379,7 +374,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="4" selection-start="392" selection-end="392" vertical-scroll-proportion="0.2921875">
+        <state line="110" column="40" selection-start="3042" selection-end="3042" vertical-scroll-proportion="-18.0">
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/features.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="23" selection-start="1272" selection-end="1272" vertical-scroll-proportion="1.4231927">
           <folding />
         </state>
       </provider>

@@ -53,8 +53,16 @@ Recipient
     top:150px;
 }
 
-#post-error {
+.error {
     color:red;
+}
+
+#location_output {
+    text-align:center;
+    font-size:30px;
+    width:100%;
+    position: absolute;
+    top:150px;
 }
 
 
