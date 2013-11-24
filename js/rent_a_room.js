@@ -109,9 +109,150 @@ $('#location').keyup(function() {
 });
 
 
+
+function resetLatLon(inputLat, inputLong, input) {
+    inputLat.value = '';
+    inputLong.value = '';
+    input.value = '';
+
+    console.log("reset latitude/longitude");
+}
+
+function tryGeocoding(inputLat, inputLong, input, geocoder) {
+    var address = input.value;
+    resetLatLon(inputLat, inputLong, input);
+    // try to call geocoding manually
+    console.log("try to geocode :" + address);
+    geocoder.geocode({
+        'address': address
+    }, function (results, status) {
+        console.log("Geocoding result " + status);
+        if (status == google.maps.GeocoderStatus.OK) {
+            // pick up the first result, maybe not accurate but better that nothing
+            input.value = results[0].formatted_address;
+            inputLat.value = results[0].geometry.location.lat();
+            inputLong.value = results[0].geometry.location.lng();
+        }
+    });
+}
+
+function initialize() {
+    var input = document.getElementById('location');
+    var inputLong = document.getElementById('long');
+    var inputLat = document.getElementById('lat');
+
+    var options = {
+        types: ['(cities)']
+    };
+
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+    var geocoder = new google.maps.Geocoder();
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            resetLatLon(inputLat, inputLong, input);
+            return;
+        }
+        console.log("new place : ");
+        console.log(place);
+        inputLat.value = place.geometry.location.lat();
+        inputLong.value = place.geometry.location.lng();
+        loadMap(inputLat.value,inputLong.value);
+    });
+    $('#location, #city').keydown(function (e) {
+        // is user press TAB
+        if (e.which === 9) {
+            tryGeocoding(inputLat, inputLong, input, geocoder);
+            return true;
+        }
+    });
+    $('#location, #city').keydown(function (e) {
+        // if user press ENTER, the event is not triggered and the location is not correct
+        if (e.which === 13) {
+            tryGeocoding(inputLat, inputLong, input, geocoder);
+            return true;
+        }
+    });
+}
+jQuery(document).ready(initialize);
+
+
+
+/*function initialize()
+{
+/*
+Search Wait will allow to type in search and only add listeners after keyup event is complete/ making a timer - when we trigger 5sec
+
+
+    var searchWait = null;
+    autocomplete = new google.maps.places.AutocompleteService(null, {
+        types: ['geocode']
+    });
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            resetLatLon(inputLat, inputLong, input);
+            return;
+        }
+        //inputLat.value = place.geometry.location.lat();
+        console.log(place.geometry.location.lat());
+        //inputLong.value = place.geometry.location.lng();
+        console.log(place.geometry.location.lng ());
+    });
+
+    $('#location').keyup(function() {
+
+
+        if(searchWait!= null)// make sure we clear any previous timers before setting a new one
+        clearTimeout(searchWait);
+
+        if (this.value.length === 0) {
+            return;
+        }
+        searchWait = setTimeout(function(searchValue) {
+            return function() {
+                autocomplete.getPlacePredictions({input: searchValue}, function(predictions, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        console.log(predictions);
+                    }
+                });
+            }
+        }(this.value), 500);
+    });
+
+
+ /*-----------------------------------------------------------------------------------------
+
+ Gmap after geocoding is completed.
+
+ -----------------------------------*/
+
+function loadMap(lat,long){
+
+    var myCenter=new google.maps.LatLng(lat,long);
+    var marker;
+    var mapProp = {
+        center:myCenter,
+        zoom:15,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    marker=new google.maps.Marker({
+        position:myCenter
+        // animation:google.maps.Animation.BOUNCE
+    });
+
+    marker.setMap(map);
+
+
+}
+
+
 /*-----------------------------------------------------------------------------------------
 
-   3. Amneties
+   3. Amenities
 
     -----------------------------------*/
    var room_data = {};
@@ -148,3 +289,7 @@ room_data['beige-room'] = {
     security:225,
     last_month:450
 };
+/*---------------------------
+    search script from Susan Bucks
+_____________________________*/
+

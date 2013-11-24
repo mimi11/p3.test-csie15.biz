@@ -9,34 +9,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9j0FUz8QHzaJDPLFxQuHlhpM7vBj5DU0&sensor=false">
-    </script>
+  <!--  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9j0FUz8QHzaJDPLFxQuHlhpM7vBj5DU0&sensor=false">
+    </script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
-    <script>
-
-        var myCenter=new google.maps.LatLng(42.432772,-71.072309);
-        var marker;
-
-        function initialize()
-        {
-            var mapProp = {
-                center:myCenter,
-                zoom:15,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-            marker=new google.maps.Marker({
-                position:myCenter
-               // animation:google.maps.Animation.BOUNCE
-            });
-
-            marker.setMap(map);
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 
 
 </head>
@@ -57,17 +33,21 @@
         <span class='error' id='post-error'></span>
 
 
-        <!-- Specific location / City-->
+        <!-- Search Specific location / City-->
         <h2>Location </h2>
 
         <input type='text' id='location' maxlength="30">
         <span class='error' id='location-error'></span>
+        <input id="long" name="long" type="hidden" value=''>
+        <input id="lat" name="lat" type="hidden" value=''>
 
-        <!-- Specific location / City-->
-        <h2>Zip Code </h2>
+
 
         <!-- Message -->
         <h2>Room Ad message here</h2>
+        <input type='text' id='room_ad' maxlength="500">
+        <span class='error' id='room-error'></span>
+
 
         <!-- Texture picture -->
         <h2>Select Available room </h2>
@@ -96,8 +76,6 @@
         <input type='radio' class='contact' name='contact' id='skype'>
         <label for='skype'>&nbsp;skypeID: MissLandlady</label><br>
 
-        <!--Search for MBTA lines nearby -->
-        <h2>Bus line :</h2>
 
 
     </div>
@@ -109,15 +87,16 @@
              <div id='posting_title'></div>
              <div id='roomview'> </div>
              <div id= 'location_output'></div>
+             <div id='contact-info'></div>
              <div id="googleMap" style="width:500px;height:380px;"></div>
              <div id= 'rent'></div>
              <div id ='amenities'></div>
-             <div id='contact-info'></div>
+
          </div>
          <div id='ad-message'>
-             <div id='rentValues'></div>
+             <div id='room_ad'></div>
              <div id='rentRequirements'></div>
-             <div id='rentMessage'></div>
+
           </div>
     </div>
 
