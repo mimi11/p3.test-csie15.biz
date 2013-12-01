@@ -4,11 +4,14 @@ Room picker
 .room {
     cursor:pointer;
     width:200px;
-    height:150px;
+    height:200px;
     border:1px solid #eee;
     float:left;
     margin-right:5px;
 }
+
+
+
 
 #blue-room {
     background-image:url('../images/blue-room.jpg');
@@ -45,14 +48,22 @@ Room picker
 /*-------------------------------------------------------------------------------------------------
 Recipient
 -------------------------------------------------------------------------------------------------*/
-#posting-title {
+
+
+
+
+#roomAd_output{
+    color: green;
     text-align:center;
-    font-size:30px;
+    font-size:20px;
+    margin: 1em;
     width:100%;
+    float:left;
+    position:relative;
+    top:10px;
 
-    top:150px;
+
 }
-
 .error {
     color:red;
 }
@@ -61,9 +72,29 @@ Recipient
     text-align:center;
     font-size:30px;
     width:100%;
-    position: absolute;
+    position:inherit;
     top:150px;
+    border:1em;
 }
 
+#amenities{
+    color: green;
+    font-size:30px;
+    margin: 1em;
+    float:left;
+    top:100px;
+    vertical-align: top;
+    display: inline-block;
 
+
+
+}
+
+#rent{
+    color:darkblue;
+    font-size:30px;
+    top: 150px;
+    margin-right: 5em;
+    border:1em;
+}
 

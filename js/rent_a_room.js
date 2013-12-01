@@ -1,62 +1,22 @@
 /*
-Rent-a-Room application is a quick an easy way for Landlord or roomate to post a new Ad using external services such as Craiglist
-and refer them to the one-pager view that is filled out in just few clicks.
+Rent-a-Room application is a quick an easy way for Landlord or roomate to post a new Ad
+and share link or print source code to post for external website.
+The application provides admin function for landlord to
+1. Enter post title
+2. Provide Location map using google services
+3. Select Room with built-in amenities
+4. Calculates move-in requirement
 
- */
-
-//1. Request user to Upload room Pictures in gallery
-
-
-
-
-/*-------------------------------------------------------------------------------------------------
- 2. Select Available room pictures from gallery
  -------------------------------------------------------------------------------------------------*/
 
-$('.room').click(function(){
-    var chosen_room=$(this).css('background-image');
-
-    // Change the background color of the house background
-    $('#roomview').css('background-image', chosen_room);
-    $('#roomview').css('background-repeat','no-repeat');
-
-    $('#rent').html( room_data[this.id].rent);
-
-    var amenities = room_data[this.id].amenities;
-    //create a view for amenities to display
-    $('#amenities').html(amenities.join(", "));
+//1. Request user to Upload room Pictures in gallery - this will be developped in P4 with php Framework
 
 
-
-
-
-});
 
 
 
 /*-------------------------------------------------------------------------------------------------
- Contact
- -------------------------------------------------------------------------------------------------*/
-$('.contact').click(function() {
-
-    // Which radio button was clicked?
-    // (Note here how we're storing a whole element in a variable... cool, huh?)
-    var radio_button = $(this);
-
-    // What is the label next to (i.e. after) that radio
-    var label = radio_button.next();
-
-    // Now that we know the label, grab the text inside of it (That's our message!)
-    var message = label.html();
-
-    $('#contact-info').html(message);
-
-});
-
-
-
-/*-------------------------------------------------------------------------------------------------
- posting title
+ 2.posting title
  -------------------------------------------------------------------------------------------------*/
 $('#post').keyup(function() {
 
@@ -82,9 +42,34 @@ $('#post').keyup(function() {
 
 
 
+/*-------------------------------------------------------------------------------------------------
+ 3. Select Available room pictures from gallery
+ -------------------------------------------------------------------------------------------------*/
+
+$('.room').click(function(){
+    var chosen_room=$(this).css('background-image');
+
+    // Change the background color of the house background
+    $('#roomview').css('background-image', chosen_room);
+    $('#roomview').css('background-repeat','no-repeat');
+
+    $('#rent').html( room_data[this.id].rent);
+    $('#security').html( room_data[this.id].security);
+    $('#last_month').html( room_data[this.id].last_month);
+
+    var amenities = room_data[this.id].amenities;
+    //create a view for amenities to display
+    $('#amenities').html(amenities.join(", "));
+
+
+});
+
+
+
+
 
 /*-------------------------------------------------------------------------------------------------
- Location title
+4. Location title
  -------------------------------------------------------------------------------------------------*/
 $('#location').keyup(function() {
 
@@ -108,8 +93,14 @@ $('#location').keyup(function() {
 
 });
 
+/*------------------------------------------------------------------------------------------------------------------
+5. Enter Location by providing City
+The purpose of this function is to retrieve geocoding information from Google search by using autocomplete in search box - caveat the trigger only works with autocomplete keyin search.
+The application has not been designed for other events such as tab, or enter, mouse and other listener events.
 
-
+ Re-using source code from Stack Overflow to set-up retrieving latitude and longitude information (geocode)
+ http://stackoverflow.com/questions/17154156/geocoding-with-google-maps-api-v3-is-not-working-when-i-press-enter?rq=1
+--------------------------------------------------------------------------------------------------------------------------------*/
 function resetLatLon(inputLat, inputLong, input) {
     inputLat.value = '';
     inputLong.value = '';
@@ -178,53 +169,9 @@ jQuery(document).ready(initialize);
 
 
 
-/*function initialize()
-{
-/*
-Search Wait will allow to type in search and only add listeners after keyup event is complete/ making a timer - when we trigger 5sec
-
-
-    var searchWait = null;
-    autocomplete = new google.maps.places.AutocompleteService(null, {
-        types: ['geocode']
-    });
-
-    google.maps.event.addListener(autocomplete, 'place_changed', function () {
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-            resetLatLon(inputLat, inputLong, input);
-            return;
-        }
-        //inputLat.value = place.geometry.location.lat();
-        console.log(place.geometry.location.lat());
-        //inputLong.value = place.geometry.location.lng();
-        console.log(place.geometry.location.lng ());
-    });
-
-    $('#location').keyup(function() {
-
-
-        if(searchWait!= null)// make sure we clear any previous timers before setting a new one
-        clearTimeout(searchWait);
-
-        if (this.value.length === 0) {
-            return;
-        }
-        searchWait = setTimeout(function(searchValue) {
-            return function() {
-                autocomplete.getPlacePredictions({input: searchValue}, function(predictions, status) {
-                    if (status === google.maps.places.PlacesServiceStatus.OK) {
-                        console.log(predictions);
-                    }
-                });
-            }
-        }(this.value), 500);
-    });
-
-
  /*-----------------------------------------------------------------------------------------
 
- Gmap after geocoding is completed.
+6. Customizing  loadMap() from  Gmap after retrieving geocoding input information,by passing latitude and longitude parameters.
 
  -----------------------------------*/
 
@@ -240,8 +187,8 @@ function loadMap(lat,long){
     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
     marker=new google.maps.Marker({
-        position:myCenter
-        // animation:google.maps.Animation.BOUNCE
+        position:myCenter,
+        animation:google.maps.Animation.BOUNCE
     });
 
     marker.setMap(map);
@@ -252,9 +199,11 @@ function loadMap(lat,long){
 
 /*-----------------------------------------------------------------------------------------
 
-   3. Amenities
+  7. Amenities
+  The idea is that the Landlord only has to set-up the amineties only when setting up the application, Selecting a room by click will automatically show features associated
+  with the room selected
 
-    -----------------------------------*/
+-----------------------------------*/
    var room_data = {};
    room_data['blue-room'] = {
        rent:650,
@@ -289,7 +238,46 @@ room_data['beige-room'] = {
     security:225,
     last_month:450
 };
-/*---------------------------
-    search script from Susan Bucks
-_____________________________*/
 
+/*-------------------------------------------------------------------------------------------------
+ 8. Ad Message title
+ -------------------------------------------------------------------------------------------------*/
+$('#room_ad').keyup(function() {
+
+    // Figure out what the user typed in
+    var post = $(this).val();
+
+    // Inject the recipient into the output div on the card
+    $('#roomAd_output').html(post);
+
+    // How long was the recipient?
+    var length = roomAd_output.length;
+
+    // If it was 20 characters, that's the max, so inject an error message
+    if(length == 30) {
+        $('#adInfo_error').html("Max characters: 40");
+    }
+    // Otherwise, we're all good, clear the error message
+    else {
+        $('#AdInfo_error').html("");
+    }
+
+});
+/*-------------------------------------------------------------------------------------------------
+ Contact
+ -------------------------------------------------------------------------------------------------*/
+$('.contact').click(function() {
+
+    // Which radio button was clicked?
+    // (Note here how we're storing a whole element in a variable... cool, huh?)
+    var radio_button = $(this);
+
+    // What is the label next to (i.e. after) that radio
+    var label = radio_button.next();
+
+    // Now that we know the label, grab the text inside of it (That's our message!)
+    var message = label.html();
+
+    $('#contact-info').html(message);
+
+});

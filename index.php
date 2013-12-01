@@ -20,12 +20,12 @@
 
 <body>
 
-<div id='wrapper'>
+    <div id='wrapper'>
 
-    <h1>Rent-A-Room</h1>
+        <h1>Rent-A-Room</h1>
 
-    <!-- Left side with all the controls -->
-    <div id='controls'>
+            <!-- Left side with all the controls -->
+        <div id='controls'>
 
         <!-- Title of your post -->
         <h2>Posting title </h2>
@@ -42,13 +42,6 @@
         <input id="lat" name="lat" type="hidden" value=''>
 
 
-
-        <!-- Message -->
-        <h2>Room Ad message here</h2>
-        <input type='text' id='room_ad' maxlength="500">
-        <span class='error' id='room-error'></span>
-
-
         <!-- Texture picture -->
         <h2>Select Available room </h2>
 
@@ -60,9 +53,14 @@
         <div class='room'></div>
 
 
+            <!-- Message -->
+            <br>
+            <h2>Room Ad message here</h2>
+            <input type='text' id='room_ad' maxlength="500">
+            <span class='error' id='room-error'></span>
 
-        <br>
-        <br>
+
+            <br>
         <!-- Contact info -->
         <h2>Landlord Contact info</h2>
 
@@ -76,36 +74,50 @@
         <input type='radio' class='contact' name='contact' id='skype'>
         <label for='skype'>&nbsp;skypeID: MissLandlady</label><br>
 
+        </div> <!--end of Control div-->
+
+        <!-- Right side with the live preview -->
+
+        <div id='preview'>
+         <div id='house-background'><!--left side image background container-->
+             <div id ='intro'>
+                    <div id='posting_title'></div>
+                    <div id= 'rent'>  </div>
+                    <div id= 'location_output'></div>
+
+             </div><!--End of intro div-->
+
+            <div id= 'roomInfo'>
+                    <div id='roomview'> </div>
+                    <div id="googleMap"></div>
 
 
-    </div>
-
-    <!-- Right side with the live preview -->
-    <div id='preview'>
-
-         <div id=house-background>
-             <div id='posting_title'></div>
-             <div id='roomview'> </div>
-             <div id= 'location_output'></div>
-             <div id='contact-info'></div>
-             <div id="googleMap" style="width:500px;height:380px;"></div>
-             <div id= 'rent'></div>
+            </div> <!--End of rooomInfo-->
              <div id ='amenities'></div>
 
-         </div>
-         <div id='ad-message'>
-             <div id='room_ad'></div>
-             <div id='rentRequirements'></div>
+             <div id='roomAd_output'></div>
 
-          </div>
-    </div>
+            <div id='adInfo'>
+
+                <div class='rentRequirements'>
+                    <div id='security'></div>
+                    <div id='last_month'></div>
+                </div>
+
+            </div> <!--End of adInfo-->
+
+
+            <div id='contact-info'></div>
+         </div>
+        </div>
 
         <!-- Buttons -->
         <input type='button' id='refresh-btn' value='Start over'>
         <input type='button' id='print-btn' value='Print'>
-</div>
-<script src="js/rent_a_room.js"></script>
 
+        <script src="js/rent_a_room.js"></script>
+
+    </div>
 </body>
 
 </html>
