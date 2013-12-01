@@ -60,6 +60,24 @@ $('.room').click(function(){
     var amenities = room_data[this.id].amenities;
     //create a view for amenities to display
     $('#amenities').html(amenities.join(", "));
+    $('.room').click(calculate);
+    var total=0;
+
+
+    function calculate() {
+
+        var security = $('#security').val();
+        var rent = $('#rent').val();
+        var last_month = ('#last_month').val();
+
+        var amount =security + last_month;
+
+        total = amount+ rent;
+
+
+        $('#output').html(total);
+
+    }
 
 
 });

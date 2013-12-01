@@ -59,7 +59,16 @@
             <input type='text' id='room_ad' maxlength="500">
             <span class='error' id='room-error'></span>
 
+            <h2>Move_in Requirements </h2>
 
+                <input type='checkbox' name='Security' value=''>Security<br>
+                <input type='checkbox' name='' value=''>'Last_month_rent<br>
+
+
+           <button>Calculate</button>
+
+            Total: $<span id='output'></span>
+            
             <br>
         <!-- Contact info -->
         <h2>Landlord Contact info</h2>
@@ -82,7 +91,7 @@
          <div id='house-background'><!--left side image background container-->
              <div id ='intro'>
                     <div id='posting_title'></div>
-                    <div id= 'rent'>  </div>
+                    <div id= 'rent'>$  </div>
                     <div id= 'location_output'></div>
 
              </div><!--End of intro div-->
@@ -100,8 +109,10 @@
             <div id='adInfo'>
 
                 <div class='rentRequirements'>
-                    <div id='security'></div>
-                    <div id='last_month'></div>
+                    <div id='security'>$ </div>
+                   <div id='last_month'>$ </div>
+
+
                 </div>
 
             </div> <!--End of adInfo-->

@@ -97,4 +97,7 @@ Recipient
     margin-right: 5em;
     border:1em;
 }
-
+#output{
+    font-size: 15px;
+    color:red;
+}
