@@ -56,18 +56,21 @@
             <!-- Message -->
             <br>
             <h2>Room Ad message here</h2>
-            <input type='text' id='room_ad' maxlength="500">
+            <textarea type='text' id='room_ad' maxlength="500"></textarea>
             <span class='error' id='room-error'></span>
 
             <h2>Move_in Requirements </h2>
 
-                <input type='checkbox' name='Security' value=''>Security<br>
-                <input type='checkbox' name='' value=''>'Last_month_rent<br>
+                <input type='checkbox' name='Security' id = 'checkbox_security' value=''/>Security <span id='security'></span>
+            <br>
+                <input type='checkbox' name='' id = 'checkbox_last_month' value=''/>'Last_month_rent <span id='last_month'></span>
+            <br>
 
 
-           <button>Calculate</button>
+               <button id ="calculate">Calculate</button>
+            <br>
 
-            Total: $<span id='output'></span>
+            Total: <span id='output'></span>
             
             <br>
         <!-- Contact info -->
@@ -91,7 +94,7 @@
          <div id='house-background'><!--left side image background container-->
              <div id ='intro'>
                     <div id='posting_title'></div>
-                    <div id= 'rent'>$  </div>
+                    <div id= 'rent'>  </div>
                     <div id= 'location_output'></div>
 
              </div><!--End of intro div-->
@@ -109,8 +112,8 @@
             <div id='adInfo'>
 
                 <div class='rentRequirements'>
-                    <div id='security'>$ </div>
-                   <div id='last_month'>$ </div>
+
+
 
 
                 </div>

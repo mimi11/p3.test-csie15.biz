@@ -120,7 +120,6 @@ Layout
 /* Right column */
 #preview {
     width:400px;
-
     float:left;
     text-align:center;
 
@@ -133,11 +132,12 @@ House
 -------------------------------------------------------------------------------------------------*/
 #house-background {
     background-image:url('../images/House-background.jpg');
+    background-size: ;
     background-repeat:no-repeat;
-    height:1200px;
-    width:800px;
+    height:770px;
+    width:750px;
     margin:0px auto;
-    overflow: auto;
+    overflow: hidden;
 
 }
 #intro{
@@ -154,12 +154,13 @@ House
 #posting_title{
     display: inline-block;
     cursor:pointer;
-    text-align:center;
+    text-align:left;
     width:100%;
     top:150px;
     font-size: 30px;
     color: green;
     border: 1em;
+
 
 
 }
@@ -177,7 +178,6 @@ House
 
 #roomview {
 
-    height:469px;
     -webkit-flex: initial;
     flex: initial;
     width: 338px;
