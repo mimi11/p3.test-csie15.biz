@@ -2,33 +2,33 @@
 General css3 developped by Susan Bucks for class usage - reused with permission.
 -------------------------------------------------------------------------------------------------*/
 * {
-    font-family:Helvetica;
-    color:#333;
+    font-family: Helvetica;
+    color: #333;
 }
 
 h1 {
-    text-align:center;
+    text-align: center;
 
-    margin-top:25px;
-    margin-bottom:25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 h2 {
-    font-size:15px;
-    margin-top:30px;
-    margin-bottom:5px;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
 small {
-    font-family:verdana;
+    font-family: verdana;
 }
 
 h2:first-child {
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 .clearfix {
-    clear:both;
+    clear: both;
 }
 
 .circular {
@@ -40,19 +40,16 @@ h2:first-child {
 }
 
 input[type=text] {
-    font-size:16px;
+    font-size: 16px;
 }
 
-#room_ad{
-    width:350px;
-    height:350px;
+#room_ad {
+    width: 300px;
+    height: 100px;
     float: left;
     margin: 1em;
 
-
 }
-
-
 
 /*-------------------------------------------------------------------------------------------------
 Buttons
@@ -73,8 +70,8 @@ input[type=button] {
     color: #fff;
     font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     padding: 6px 0 6px 0;
-    position:relative;
-    top:-1px;
+    position: relative;
+    top: -1px;
     text-align: center;
     text-shadow: 0 -1px 0 #4c9021;
     width: 100px;
@@ -100,79 +97,73 @@ input[type=button]:active {
     box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 
-
 /*-------------------------------------------------------------------------------------------------
 Layout
 -------------------------------------------------------------------------------------------------*/
 #wrapper {
-    width:960px;
-    margin:0px auto;
+    width: 960px;
+    margin: 0px auto;
+    margin-left: 2px;
+    margin-right: 3px;
 }
 
 /* Left column */
 #controls {
-    width:425px;
-    margin-right:50px;
-    float:left;
+    width: 425px;
+    margin-right: 50px;
+    float: left;
 }
-
 
 /* Right column */
 #preview {
-    width:400px;
-    float:left;
-    text-align:center;
-
+    width: 400px;
+    float: left;
+    text-align: center;
 
 }
-
 
 /*-------------------------------------------------------------------------------------------------
 House
 -------------------------------------------------------------------------------------------------*/
 #house-background {
-    background-image:url('../images/House-background.jpg');
-    background-size: ;
-    background-repeat:no-repeat;
-    height:770px;
-    width:750px;
-    margin:0px auto;
+    background-image: url('../images/House-background.jpg');
+    background-size: 900px;
+    background-repeat: no-repeat;
+    height: 770px;
+    width: 750px;
+    margin: 0px auto;
     overflow: hidden;
 
 }
-#intro{
+
+#intro {
+    width: 750px;
     display: inline-block;
     display: -webkit-flex;
     display: flex;
-    float:left;
-    margin-right: 5em;
+    float: left;
     overflow: auto;
-
-
+    border-color: grey;
+    border-bottom-style: dashed;
 
 }
-#posting_title{
+
+#posting_title {
     display: inline-block;
-    cursor:pointer;
-    text-align:left;
-    width:100%;
-    top:150px;
+    cursor: pointer;
+    text-align: justify;
     font-size: 30px;
-    color: green;
-    border: 1em;
-
-
+    margin-right: 2em;
+    border-color: lightseagreen;
 
 }
 
-#roomInfo{
+#roomInfo {
     display: inline-block;
     display: -webkit-flex;
     display: flex;
-    float:left;
+    float: left;
     overflow: auto;
-
-
 
 }
 
@@ -182,28 +173,26 @@ House
     flex: initial;
     width: 338px;
     min-width: 200px;
-    overflow:hidden;
-    float:left;
-
+    overflow: hidden;
+    float: left;
 
 }
 
-#googleMap{
-    width:400px;
-    height:220px;
-    float:left;
+#googleMap {
+    width: 400px;
+    height: 220px;
+    float: left;
     -webkit-flex: 2;
     flex: 2;
 
 }
 
-#adInfo{
-    clear:left;
+#adInfo {
+    clear: left;
     display: -webkit-flex;
     display: flex;
-    float:left;
+    float: left;
     margin: 1em;
     z-index: -1;
-
 
 }

@@ -1,58 +1,55 @@
 /*
-Rent-a-Room application is a quick an easy way for Landlord or roomate to post a new Ad
-and share link or print source code to post for external website.
-The application provides admin function for landlord to
-1. Enter post title
-2. Provide Location map using google services
-3. Select Room with built-in amenities
-4. Calculates move-in requirement
+ Rent-a-Room application is a quick an easy way for Landlord or roomate to post a new Ad
+ and share link or print source code to post for external website.
+ The application provides admin function for landlord to
+ 1. Enter post title
+ 2. Provide Location map using google services
+ 3. Select Room with built-in amenities
+ 4. Calculates move-in requirement
 
  -------------------------------------------------------------------------------------------------*/
 
-//1. Request user to Upload room Pictures in gallery - this will be developped in P4 with php Framework
 
 var room_data = {};
 room_data['blue-room'] = {
-    rent:650,
-    amenities:['wifi','private-bathroom','cable'],
-    security:325,
-    last_month:650
+    rent: 650,
+    amenities: ['Amenities included: wifi', 'private-bathroom', 'cable'],
+    security: 325,
+    last_month: 650
 };
 room_data['red-room'] = {
-    rent:750,
-    amenities:['wifi','pool','cable'],
-    security:375,
-    last_month:750
+    rent: 750,
+    amenities: ['Amenities included: wifi', 'pool', 'cable'],
+    security: 375,
+    last_month: 750
 };
 
 room_data['purple-room'] = {
-    rent:500,
-    amenities:['wifi','air-conditioner','cable'],
-    security:250,
-    last_month:500
+    rent: 500,
+    amenities: ['Amenities included: wifi', 'air-conditioner', 'cable'],
+    security: 250,
+    last_month: 500
 };
 
 
 room_data['silver-room'] = {
-    rent:800,
-    amenities:['wifi','sauna','cable'],
-    security:400,
-    last_month:800
+    rent: 800,
+    amenities: ['Amenities included: wifi', 'sauna', 'cable'],
+    security: 400,
+    last_month: 800
 };
 room_data['beige-room'] = {
-    rent:450,
-    amenities:['wifi','micro-wave','cable'],
-    security:225,
-    last_month:450
+    rent: 450,
+    amenities: ['Amenities included: wifi', 'micro-wave', 'cable'],
+    security: 225,
+    last_month: 450
 };
-
-
 
 
 /*-------------------------------------------------------------------------------------------------
  2.posting title
  -------------------------------------------------------------------------------------------------*/
-$('#post').keyup(function() {
+$('#post').keyup(function () {
 
     // Figure out what the user typed in
     var post = $(this).val();
@@ -61,11 +58,11 @@ $('#post').keyup(function() {
     $('#posting_title').html(post);
 
     // How long was the recipient?
-    var length = post_Title.length;
+    var length = post.length;
 
-    // If it was 20 characters, that's the max, so inject an error message
-    if(length == 40) {
-        $('#post-error').html("Max characters: 40");
+    // If it was  40 characters, that's the max, so inject an error message
+    if (length == 20) {
+        $('#post-error').html("Max characters: 20");
     }
     // Otherwise, we're all good, clear the error message
     else {
@@ -76,70 +73,89 @@ $('#post').keyup(function() {
 
 
 
+
+
+$(function() {
+    $( "#datepicker" ).datepicker();
+
+
+    var selected_date =$('#datepicker').val();
+
+    $('#datepicker_output').html("Available: "+selected_date);
+});
+
+
+
 /*-------------------------------------------------------------------------------------------------
  3. Select Available room pictures from gallery
  -------------------------------------------------------------------------------------------------*/
 
-$('.room').click(function(){
-    var chosen_room=$(this).css('background-image');
+$('.room').click(function () {
+    var chosen_room = $(this).css('background-image');
 
     // Change the background color of the house background
     $('#roomview').css('background-image', chosen_room);
-    $('#roomview').css('background-repeat','no-repeat');
+    $('#roomview').css('background-repeat', 'no-repeat');
 
-    $('#rent').html( "$"+room_data[this.id].rent);
-    $('#security').html( room_data[this.id].security);
-    $('#last_month').html( room_data[this.id].last_month);
-    $('#checkbox_security').val( room_data[this.id].security);
-    $('#checkbox_last_month').val( room_data[this.id].last_month);
+
+    var rent = parseInt(room_data[this.id].rent);
+    $('#dollar_sign').html("  $" + rent + "/month");
+    $('#rent').html(rent);
+
+    $('#security').html(room_data[this.id].security);
+    $('#last_month').html(room_data[this.id].last_month);
+    $('#checkbox_security').val(room_data[this.id].security);
+    $('#checkbox_last_month').val(room_data[this.id].last_month);
 
 
     var amenities = room_data[this.id].amenities;
     //create a view for amenities to display
+
     $('#amenities').html(amenities.join(", "));
 
 
-
+    ;
 
 });
 
-/*-------------------------------------------------------------------------------------------------
- 3. Select Available room pictures from gallery
+/*------------------------------------------------------------------------------------------------
+ 3. Select Move-in requirements - function will determined based on checkbox choices
  -------------------------------------------------------------------------------------------------*/
 
 
-$('#calculate').click(function() {
+$('#calculate').click(function () {
 // security is going to be the value of the checkbox if it is checked otherwise it's 0.
-    var security = $('#checkbox_security').is(':checked')? parseInt($('#checkbox_security').val()):0;
-    var last_month = $('#checkbox_last_month').is(':checked')? parseInt($('#checkbox_last_month').val()):0;
+    var security = $('#checkbox_security').is(':checked') ? parseInt($('#checkbox_security').val()) : 0;
+    var last_month = $('#checkbox_last_month').is(':checked') ? parseInt($('#checkbox_last_month').val()) : 0;
 
-    var rent =  parseInt($('#rent').text());
+    var rent = parseInt($('#rent').text());
 
-    var amount =security + last_month;
+    var amount = security + last_month;
 
-    var total = amount + rent;
+    var total = parseInt(amount + rent);
 
 
-    $('#output').html("$"+total);
+    $('#output').html("Total move-in requirements: $" + total);
+
 
 });
 
 /*-------------------------------------------------------------------------------------------------
-4. Location title
+ 4. Location title
  -------------------------------------------------------------------------------------------------*/
-$('#location').keyup(function() {
+$('#location').keyup(function () {
 
     // Figure out what the user typed in
     var post = $(this).val();
 
     // Inject the recipient into the output div on the card
-    $('#location_output').html(post);
+    $('#location_output').html("in "+ post);
 
     // How long was the recipient?
     var length = location_output.length;
 
     // If it was 20 characters, that's the max, so inject an error message
-    if(length == 30) {
+    if (length == 30) {
         $('#location-error').html("Max characters: 40");
     }
     // Otherwise, we're all good, clear the error message
@@ -150,13 +166,13 @@ $('#location').keyup(function() {
 });
 
 /*------------------------------------------------------------------------------------------------------------------
-5. Enter Location by providing City
-The purpose of this function is to retrieve geocoding information from Google search by using autocomplete in search box - caveat the trigger only works with autocomplete keyin search.
-The application has not been designed for other events such as tab, or enter, mouse and other listener events.
+ 5. Enter Location by providing City
+ The purpose of this function is to retrieve geocoding information from Google search by using autocomplete in search box - caveat the trigger only works with autocomplete keyin search.
+ The application has not been designed for other events such as tab, or enter, mouse and other listener events.
 
  Re-using source code from Stack Overflow to set-up retrieving latitude and longitude information (geocode)
  http://stackoverflow.com/questions/17154156/geocoding-with-google-maps-api-v3-is-not-working-when-i-press-enter?rq=1
---------------------------------------------------------------------------------------------------------------------------------*/
+ --------------------------------------------------------------------------------------------------------------------------------*/
 function resetLatLon(inputLat, inputLong, input) {
     inputLat.value = '';
     inputLong.value = '';
@@ -204,7 +220,7 @@ function initialize() {
         console.log(place);
         inputLat.value = place.geometry.location.lat();
         inputLong.value = place.geometry.location.lng();
-        loadMap(inputLat.value,inputLong.value);
+        loadMap(inputLat.value, inputLong.value);
     });
     $('#location, #city').keydown(function (e) {
         // is user press TAB
@@ -224,27 +240,26 @@ function initialize() {
 jQuery(document).ready(initialize);
 
 
+/*-----------------------------------------------------------------------------------------
 
- /*-----------------------------------------------------------------------------------------
-
-6. Customizing  loadMap() from  Gmap after retrieving geocoding input information,by passing latitude and longitude parameters.
+ 6. Customizing  loadMap() from  Gmap after retrieving geocoding input information,by passing latitude and longitude parameters.
 
  -----------------------------------*/
 
-function loadMap(lat,long){
+function loadMap(lat, long) {
 
-    var myCenter=new google.maps.LatLng(lat,long);
+    var myCenter = new google.maps.LatLng(lat, long);
     var marker;
     var mapProp = {
-        center:myCenter,
-        zoom:15,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
+        center: myCenter,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-    marker=new google.maps.Marker({
-        position:myCenter,
-        animation:google.maps.Animation.BOUNCE
+    marker = new google.maps.Marker({
+        position: myCenter,
+        animation: google.maps.Animation.BOUNCE
     });
 
     marker.setMap(map);
@@ -255,27 +270,27 @@ function loadMap(lat,long){
 
 /*-----------------------------------------------------------------------------------------
 
-  7. Amenities
-  The idea is that the Landlord only has to set-up the amineties only when setting up the application, Selecting a room by click will automatically show features associated
-  with the room selected
+ 7. Amenities
+ The idea is that the Landlord only has to set-up the amineties only when setting up the application, Selecting a room by click will automatically show features associated
+ with the room selected
 
---
-/*-------------------------------------------------------------------------------------------------
+ --
+ /*-------------------------------------------------------------------------------------------------
  8. Ad Message title
  -------------------------------------------------------------------------------------------------*/
-$('#room_ad').keyup(function() {
+$('#room_ad').keyup(function () {
 
     // Figure out what the user typed in
     var post = $(this).val();
 
     // Inject the recipient into the output div on the card
-    $('#roomAd_output').html(post);
+    $('#roomAd_output').html("About the apartment:" +post);
 
     // How long was the recipient?
     var length = roomAd_output.length;
 
     // If it was 20 characters, that's the max, so inject an error message
-    if(length == 60) {
+    if (length == 60) {
         $('#adInfo_error').html("Max characters: 40");
     }
     // Otherwise, we're all good, clear the error message
@@ -287,7 +302,7 @@ $('#room_ad').keyup(function() {
 /*-------------------------------------------------------------------------------------------------
  Contact
  -------------------------------------------------------------------------------------------------*/
-$('.contact').click(function() {
+$('.contact').click(function () {
 
     // Which radio button was clicked?
     // (Note here how we're storing a whole element in a variable... cool, huh?)
