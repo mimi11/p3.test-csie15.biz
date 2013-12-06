@@ -80,8 +80,14 @@
         <br>
 
         <h2>Enter About the apartment message here </h2>
-        <textarea type='text' id='room_ad' maxlength="100"></textarea>
-        <span class='error' id='room-error'></span>
+        <textarea type='text' id='room_ad' maxlength="250"></textarea>
+        <span class='error' id='roomAd-error'></span>
+        <br>
+
+
+        <h2>Enter About  Roomamate Requirements here </h2>
+        <textarea type='text' id='about_you' maxlength="250"></textarea>
+        <span class='error' id='about_you_error'></span>
         <br>
 
         <br>
@@ -139,6 +145,7 @@
             <div id='output'></div>
 
             <div id='roomAd_output'></div>
+            <div id= 'about_you_output'></div>
 
             <div id='adInfo'>
 

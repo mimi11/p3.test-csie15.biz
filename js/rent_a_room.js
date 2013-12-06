@@ -73,16 +73,17 @@ $('#post').keyup(function () {
 
 
 
+$(document).ready(function(){
+    $('#datepicker').datepicker({
+        onSelect: function() { var selected_date =$('#datepicker').val();
 
+            $('#datepicker_output').html("Available: "+selected_date); } });
 
-$(function() {
-    $( "#datepicker" ).datepicker();
-
-
-    var selected_date =$('#datepicker').val();
-
-    $('#datepicker_output').html("Available: "+selected_date);
 });
+
+
+
+
 
 
 
@@ -281,24 +282,55 @@ function loadMap(lat, long) {
 $('#room_ad').keyup(function () {
 
     // Figure out what the user typed in
-    var post = $(this).val();
+    var room_post = $(this).val();
 
     // Inject the recipient into the output div on the card
-    $('#roomAd_output').html("About the apartment:" +post);
+    $('#roomAd_output').html("About the apartment" + room_post);
 
     // How long was the recipient?
-    var length = roomAd_output.length;
+    var length = room_post.length;
 
     // If it was 20 characters, that's the max, so inject an error message
-    if (length == 60) {
-        $('#adInfo_error').html("Max characters: 40");
+    if (length == 250) {
+        $('#roomAd-error').html("Max characters: 150");
     }
     // Otherwise, we're all good, clear the error message
     else {
-        $('#AdInfo_error').html("");
+        $('#roomAd-error').html("");
     }
 
 });
+
+/*-------------------------------------------------------------------------------------------------
+ 8. About Roomate Req. Message title
+ -------------------------------------------------------------------------------------------------*/
+$('#about_you').keyup(function () {
+
+    // Figure out what the user typed in
+    var about_you_post = $(this).val();
+
+    // Inject the recipient into the output div on the card
+    $('#about_you_output').html("About You: " + about_you_post);
+
+    // How long was the recipient?
+    var length = about_you_post.length;
+
+    // If it was 20 characters, that's the max, so inject an error message
+    if (length == 250) {
+        $('#about_you_error').html("Max characters: 250");
+    }
+    // Otherwise, we're all good, clear the error message
+    else {
+        $('#about_you_error').html("");
+    }
+
+});
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------
  Contact
  -------------------------------------------------------------------------------------------------*/
