@@ -4,11 +4,12 @@
     <list default="true" id="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/rent_a_room.js" afterPath="$PROJECT_DIR$/js/rent_a_room.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="p3.test-csie15.biz.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386286575732" ignored="false" />
-    <file path="/rent_a_room.js" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386290985026" ignored="false" />
+    <file path="/index.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386292660486" ignored="false" />
+    <file path="/rent_a_room.js" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386294525426" ignored="false" />
     <file path="/main.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386220377156" ignored="false" />
     <file path="/Dummy.txt" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386123558582" ignored="false" />
     <file path="/features.css" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386222085238" ignored="false" />
@@ -20,7 +21,6 @@
     <file path="/c_users.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385082145064" ignored="false" />
     <file path="$PROJECT_DIR$/../p2.test-csie15.biz/libraries/Image.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385078138418" ignored="false" />
     <file path="/Image.php" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1385078088881" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="131adfd5-45c8-4797-8234-b6c4fc9e0e2a" time="1386291310850" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="features.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/features.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="16" selection-start="1651" selection-end="1651" vertical-scroll-proportion="0.0">
+            <state line="46" column="14" selection-start="1067" selection-end="1081" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -61,7 +61,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="40" selection-start="4488" selection-end="4488" vertical-scroll-proportion="-53.208332">
+            <state line="146" column="29" selection-start="4653" selection-end="4664" vertical-scroll-proportion="-27.583334">
               <folding>
                 <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -72,7 +72,7 @@
       <file leaf-file-name="rent_a_room.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/rent_a_room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="0" selection-start="2239" selection-end="2239" vertical-scroll-proportion="1.9604863">
+            <state line="424" column="36" selection-start="14541" selection-end="14541" vertical-scroll-proportion="1.2507598">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -408,13 +408,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/features.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="16" selection-start="1651" selection-end="1651" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="155" column="22" selection-start="4144" selection-end="4144" vertical-scroll-proportion="0.0">
@@ -422,9 +415,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/features.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="14" selection-start="1067" selection-end="1081" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="40" selection-start="4488" selection-end="4488" vertical-scroll-proportion="-53.208332">
+        <state line="146" column="29" selection-start="4653" selection-end="4664" vertical-scroll-proportion="-27.583334">
           <folding>
             <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -433,7 +433,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/rent_a_room.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="2239" selection-end="2239" vertical-scroll-proportion="1.9604863">
+        <state line="424" column="36" selection-start="14541" selection-end="14541" vertical-scroll-proportion="1.2507598">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

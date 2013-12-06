@@ -84,9 +84,6 @@ $(document).ready(function(){
 
 
 
-
-
-
 /*-------------------------------------------------------------------------------------------------
  3. Select Available room pictures from gallery
  -------------------------------------------------------------------------------------------------*/
@@ -115,7 +112,6 @@ $('.room').click(function () {
     $('#amenities').html(amenities.join(", "));
 
 
-    ;
 
 });
 
@@ -349,3 +345,96 @@ $('.contact').click(function () {
     $('#contact-info').html(message);
 
 });
+
+
+$('#refresh-btn').click(function() {
+
+    // Cleardivs
+
+    $('#posting_title').html("");
+    $('#roomInfo').html("");
+    $('#datepicker_output').html("");
+    $('#location_output').html("");
+    $('#dollar_sign').html("");
+    $('#roomview').html("");
+    $('#rgoogleMap').html("");
+    $('#rmove_in_req').html("");
+    $('#output').html("");
+    $('#roomAd_output').html("");
+    $('#about_you_output').html("");
+    $('#amenities').html("");
+
+});
+
+
+
+/*-------------------------------------------------------------------------------------------------
+ Print
+ -------------------------------------------------------------------------------------------------*/
+$('#print-btn').click(function() {
+
+    // Goal: Open the card in a new tab
+
+    // Take the existing card on the page (in the #canvas div) and clone it for the new tab
+    var rent_a_room_clone = $('#house-background').clone();
+
+    /*
+     Next, we need to get the HTML code of the card element
+     We can't just say canvas.html() because that will get us the stuff *inside* the #canvas:
+
+     <div id="message-output"></div>
+     <div id="recipient-output"></div>
+
+     Think of a turkey sandwich. The above gets us just the inside of the sandwich, the turkey... But we need the bread too.
+
+     I.e., this is what we want:
+
+     <div id="canvas" style="background-image: url(images/texture-cloth.png);">
+     <div id="message-output"></div>
+     <div id="recipient-output"></div>
+     </div>
+
+     To accomplish this we'll use a new method .prop (short for property) and request the "outerHTML" property of the canvas.
+     In JavaScript land, "outerHTML" is both the bread and the meat of an element.
+     (Don't let it confuse you, the name outerHTML sounds kinda like it would just be the bread...it's not...it's the whole sammie).
+     */
+    var house_background = rent_a_room_clone.prop('outerHTML'); // Give us the whole canvas, i.e the bread and the meat, i.e the complete card from our clone
+
+    // Now that we have the entire canvas let's focus on creating our new tab
+
+    // For the new tab, we need to basically construct all the pieces we need for any HTML page starting with a start <html> tag.
+    var new_tab_contents  = '<html>';
+
+    // (Note the += symbol is used to add content onto an existing variable, so basically we're just adding onto our new_tab_contents variable one line at a time)
+    new_tab_contents += '<head>';
+    new_tab_contents += '<link rel="stylesheet" href="css/main.css" type="text/css">'; // Don't forget your CSS so the card looks good in the new tab!
+    new_tab_contents += '<link rel="stylesheet" href="css/features.css" type="text/css">';
+    new_tab_contents += '</head>';
+    new_tab_contents += '<body>';
+    new_tab_contents += house_background; // Here's where we add the card to our HTML for the new tab
+    new_tab_contents += '</body></html>';
+
+    // Ok, our card is ready to go, we just need to work on opening the tab
+
+    // Here's how we tell JavaScript to create a new tab (tabs are controlled by the "window" object).
+    var new_tab =  window.open();
+
+    // Now within that tab, we want to open access to the document so we can make changes
+    new_tab.document.open();
+
+    // Here's the change we'll make: we'll write our card (i.e., new_tab_contents) to the document of the tab
+    new_tab.document.write(new_tab_contents);
+
+    // Then close the tab. This isn't actually closing the tab, it's just closing JS's ability to talk to it.
+    // It's kind of like when you're talking to a walkie-talkie and you say "over and out" to communicate you're done talking
+    new_tab.document.close();
+
+});
+
+
+
+
+
+
+
+

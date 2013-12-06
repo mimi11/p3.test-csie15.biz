@@ -16,7 +16,7 @@
 
     <!--  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9j0FUz8QHzaJDPLFxQuHlhpM7vBj5DU0&sensor=false">
       </script>-->
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
 
 
 </head>
@@ -79,14 +79,14 @@
         <!-- Message -->
         <br>
 
-        <h2>Enter About the apartment message here </h2>
-        <textarea type='text' id='room_ad' maxlength="250"></textarea>
+        <h2>Enter About room message here </h2>
+        <textarea id='room_ad' maxlength="250"></textarea>
         <span class='error' id='roomAd-error'></span>
         <br>
 
 
-        <h2>Enter About  Roomamate Requirements here </h2>
-        <textarea type='text' id='about_you' maxlength="250"></textarea>
+        <h2>Enter roomamate Requirements here </h2>
+        <textarea id='about_you' maxlength="250"></textarea>
         <span class='error' id='about_you_error'></span>
         <br>
 
@@ -114,9 +114,7 @@
         <div id='house-background'><!--left side image background container-->
             <div id='intro'>
                 <div id='posting_title'></div>
-
                 <div id='dollar_sign'></div>
-
                 <div id='datepicker_output'></div>
                 <div id='rent' style="display: none;">
                 </div>
@@ -128,35 +126,18 @@
             <div id='roomInfo'>
                 <div id='roomview'></div>
                 <div id="googleMap"></div>
-            </div>
-            <!--End of rooomInfo-->
+            </div><!--End of rooomInfo-->
 
-            <div id='amenities'>
-
-
-            </div>
-
-
-            <div class="move_in_req">
-
-
-            </div>
-
+            <div id='amenities'></div>
+            <div class="move_in_req"></div>
             <div id='output'></div>
 
             <div id='roomAd_output'></div>
             <div id= 'about_you_output'></div>
 
             <div id='adInfo'>
-
-                <div class='rentRequirements'>
-
-
-                </div>
-
-            </div>
-            <!--End of adInfo-->
-
+                <div class='rentRequirements'></div>
+            </div><!--End of adInfo-->
 
             <div id='contact-info'></div>
         </div>
