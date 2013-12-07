@@ -1,14 +1,20 @@
 /*
- Rent-a-Room application is a quick an easy way for Landlord or roomate to post a new Ad
- and share link or print source code to post for external website.
+ Rent-a-Room application is a quick an easy way for a landlord or roommate to post a new Ad
+ and share link or print source code to post for external classified websites services such as craiglists
  The application provides admin function for landlord to
  1. Enter post title
- 2. Provide Location map using google services
- 3. Select Room with built-in amenities
- 4. Calculates move-in requirement
+ 2. Select and Display Available moving-date
+ 3. Provide Location map using google services
+ 4. Select available Room with built-in amenities including rent value
+ 5. Provides flexibility to modify move-in requirements for promotion purposes by calculating rent + security and last-month rent.
 
  -------------------------------------------------------------------------------------------------*/
-
+/*
+ 1. Global variables and information containing room data information that will propagate through the rest of the application
+ Each Room holds different values contained in a data array. Amenities
+ The idea is that the Landlord only has to set-up the amenities only when setting up the application, Selecting a room by click will automatically show features associated
+ with the room selected
+ ----------------------------------------------------------------------------------------------------*/
 
 var room_data = {};
 room_data['blue-room'] = {
@@ -60,7 +66,7 @@ $('#post').keyup(function () {
     // How long was the recipient?
     var length = post.length;
 
-    // If it was  40 characters, that's the max, so inject an error message
+    // If it was  20 characters, that's the max, so inject an error message
     if (length == 20) {
         $('#post-error').html("Max characters: 20");
     }
@@ -72,24 +78,27 @@ $('#post').keyup(function () {
 });
 
 
-
-$(document).ready(function(){
+/*-------------------------------------------------------------------------------------------------
+ 3. DatePicker JQuery function - allows user to pick and select available date that will be added along with the Post title
+ -------------------------------------------------------------------------------------------------*/
+$(document).ready(function () {
     $('#datepicker').datepicker({
-        onSelect: function() { var selected_date =$('#datepicker').val();
+        onSelect: function () {
+            var selected_date = $('#datepicker').val();
 
-            $('#datepicker_output').html("Available: "+selected_date); } });
+            $('#datepicker_output').html("Available: " + selected_date);
+        } });
 
 });
-
-
 
 
 /*-------------------------------------------------------------------------------------------------
  3. Select Available room pictures from gallery
  -------------------------------------------------------------------------------------------------*/
 
+var chosen_room;
 $('.room').click(function () {
-    var chosen_room = $(this).css('background-image');
+    chosen_room = $(this).css('background-image');
 
     // Change the background color of the house background
     $('#roomview').css('background-image', chosen_room);
@@ -111,10 +120,7 @@ $('.room').click(function () {
 
     $('#amenities').html(amenities.join(", "));
 
-
-
 });
-
 /*------------------------------------------------------------------------------------------------
  3. Select Move-in requirements - function will determined based on checkbox choices
  -------------------------------------------------------------------------------------------------*/
@@ -125,6 +131,7 @@ $('#calculate').click(function () {
     var security = $('#checkbox_security').is(':checked') ? parseInt($('#checkbox_security').val()) : 0;
     var last_month = $('#checkbox_last_month').is(':checked') ? parseInt($('#checkbox_last_month').val()) : 0;
 
+
     var rent = parseInt($('#rent').text());
 
     var amount = security + last_month;
@@ -132,7 +139,13 @@ $('#calculate').click(function () {
     var total = parseInt(amount + rent);
 
 
-    $('#output').html("Total move-in requirements: $" + total);
+    if (chosen_room == null) {
+        alert("you must select a room first");
+    }
+
+    else {
+        $('#output').html("Total move-in requirements: $" + total);
+    }
 
 
 });
@@ -142,20 +155,16 @@ $('#calculate').click(function () {
  -------------------------------------------------------------------------------------------------*/
 $('#location').keyup(function () {
 
-    // Figure out what the user typed in
     var post = $(this).val();
 
-    // Inject the recipient into the output div on the card
-    $('#location_output').html("in "+ post);
+    $('#location_output').html("in " + post);
 
-    // How long was the recipient?
     var length = location_output.length;
 
-    // If it was 20 characters, that's the max, so inject an error message
     if (length == 30) {
-        $('#location-error').html("Max characters: 40");
+        $('#location-error').html("Max characters: 30");
     }
-    // Otherwise, we're all good, clear the error message
+
     else {
         $('#location-error').html("");
     }
@@ -167,8 +176,8 @@ $('#location').keyup(function () {
  The purpose of this function is to retrieve geocoding information from Google search by using autocomplete in search box - caveat the trigger only works with autocomplete keyin search.
  The application has not been designed for other events such as tab, or enter, mouse and other listener events.
 
- Re-using source code from Stack Overflow to set-up retrieving latitude and longitude information (geocode)
- http://stackoverflow.com/questions/17154156/geocoding-with-google-maps-api-v3-is-not-working-when-i-press-enter?rq=1
+ *Notes Re-using source code from Stack Overflow to set-up retrieving latitude and longitude information (geocode)
+ http://stackoverflow.com/questions/17154156/
  --------------------------------------------------------------------------------------------------------------------------------*/
 function resetLatLon(inputLat, inputLong, input) {
     inputLat.value = '';
@@ -236,12 +245,11 @@ function initialize() {
 }
 jQuery(document).ready(initialize);
 
-
 /*-----------------------------------------------------------------------------------------
 
  6. Customizing  loadMap() from  Gmap after retrieving geocoding input information,by passing latitude and longitude parameters.
 
- -----------------------------------*/
+ ----------------------------------------------------------------------------------------------------*/
 
 function loadMap(lat, long) {
 
@@ -261,19 +269,11 @@ function loadMap(lat, long) {
 
     marker.setMap(map);
 
-
 }
 
 
-/*-----------------------------------------------------------------------------------------
-
- 7. Amenities
- The idea is that the Landlord only has to set-up the amineties only when setting up the application, Selecting a room by click will automatically show features associated
- with the room selected
-
- --
- /*-------------------------------------------------------------------------------------------------
- 8. Ad Message title
+/*-------------------------------------------------------------------------------------------------
+ 7. Ad Message title
  -------------------------------------------------------------------------------------------------*/
 $('#room_ad').keyup(function () {
 
@@ -281,7 +281,7 @@ $('#room_ad').keyup(function () {
     var room_post = $(this).val();
 
     // Inject the recipient into the output div on the card
-    $('#roomAd_output').html("About the apartment" + room_post);
+    $('#roomAd_output').html("About the apartment:  " + room_post);
 
     // How long was the recipient?
     var length = room_post.length;
@@ -298,7 +298,7 @@ $('#room_ad').keyup(function () {
 });
 
 /*-------------------------------------------------------------------------------------------------
- 8. About Roomate Req. Message title
+ 8. About Roommate Req. Message title
  -------------------------------------------------------------------------------------------------*/
 $('#about_you').keyup(function () {
 
@@ -322,13 +322,8 @@ $('#about_you').keyup(function () {
 
 });
 
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------
- Contact
+ 9. Contact
  -------------------------------------------------------------------------------------------------*/
 $('.contact').click(function () {
 
@@ -347,9 +342,12 @@ $('.contact').click(function () {
 });
 
 
-$('#refresh-btn').click(function() {
+/*-------------------------------------------------------------------------------------------------
+ 10. Refresh button for preview div
+ -------------------------------------------------------------------------------------------------*/
+$('#refresh-btn').click(function () {
 
-    // Cleardivs
+    // Cleardivs for preview
 
     $('#posting_title').html("");
     $('#roomInfo').html("");
@@ -364,46 +362,32 @@ $('#refresh-btn').click(function() {
     $('#about_you_output').html("");
     $('#amenities').html("");
 
+
+    // Cleardivs for preview
+    $('#post').val("");
+    $('#room_ad').val("");
+    $('#about_you').val("");
+
+
 });
 
-
-
 /*-------------------------------------------------------------------------------------------------
- Print
+ 11.Print
  -------------------------------------------------------------------------------------------------*/
-$('#print-btn').click(function() {
+$('#print-btn').click(function () {
 
     // Goal: Open the card in a new tab
 
     // Take the existing card on the page (in the #canvas div) and clone it for the new tab
     var rent_a_room_clone = $('#house-background').clone();
 
-    /*
-     Next, we need to get the HTML code of the card element
-     We can't just say canvas.html() because that will get us the stuff *inside* the #canvas:
 
-     <div id="message-output"></div>
-     <div id="recipient-output"></div>
-
-     Think of a turkey sandwich. The above gets us just the inside of the sandwich, the turkey... But we need the bread too.
-
-     I.e., this is what we want:
-
-     <div id="canvas" style="background-image: url(images/texture-cloth.png);">
-     <div id="message-output"></div>
-     <div id="recipient-output"></div>
-     </div>
-
-     To accomplish this we'll use a new method .prop (short for property) and request the "outerHTML" property of the canvas.
-     In JavaScript land, "outerHTML" is both the bread and the meat of an element.
-     (Don't let it confuse you, the name outerHTML sounds kinda like it would just be the bread...it's not...it's the whole sammie).
-     */
     var house_background = rent_a_room_clone.prop('outerHTML'); // Give us the whole canvas, i.e the bread and the meat, i.e the complete card from our clone
 
     // Now that we have the entire canvas let's focus on creating our new tab
 
     // For the new tab, we need to basically construct all the pieces we need for any HTML page starting with a start <html> tag.
-    var new_tab_contents  = '<html>';
+    var new_tab_contents = '<html>';
 
     // (Note the += symbol is used to add content onto an existing variable, so basically we're just adding onto our new_tab_contents variable one line at a time)
     new_tab_contents += '<head>';
@@ -417,7 +401,7 @@ $('#print-btn').click(function() {
     // Ok, our card is ready to go, we just need to work on opening the tab
 
     // Here's how we tell JavaScript to create a new tab (tabs are controlled by the "window" object).
-    var new_tab =  window.open();
+    var new_tab = window.open();
 
     // Now within that tab, we want to open access to the document so we can make changes
     new_tab.document.open();

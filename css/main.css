@@ -43,14 +43,6 @@ input[type=text] {
     font-size: 16px;
 }
 
-#room_ad {
-    width: 300px;
-    height: 100px;
-    float: left;
-    margin: 1em;
-
-}
-
 /*-------------------------------------------------------------------------------------------------
 Buttons
 -------------------------------------------------------------------------------------------------*/
@@ -112,6 +104,7 @@ Layout
     width: 425px;
     margin-right: 50px;
     float: left;
+    clear: both;
 }
 
 /* Right column */
@@ -127,7 +120,7 @@ House
 -------------------------------------------------------------------------------------------------*/
 #house-background {
     background-image: url('../images/House-background.jpg');
-    background-size: 900px;
+    background-size: 1010px;
     background-repeat: no-repeat;
     height: 770px;
     width: 750px;
@@ -154,7 +147,7 @@ House
     text-align: justify;
     font-size: 30px;
     margin-right: 2em;
-    border-color: lightseagreen;
+    color: limegreen;
 
 }
 
@@ -164,6 +157,9 @@ House
     display: flex;
     float: left;
     overflow: auto;
+    marign-bottom: 2em;
+    border-bottom-style: dashed;
+    border-color: grey;
 
 }
 
@@ -195,4 +191,15 @@ House
     margin: 1em;
     z-index: -1;
 
+}
+
+#room_ad {
+    width: 300px;
+    height: 100px;
+
+}
+
+#about_you {
+    width: 300px;
+    height: 100px;
 }
