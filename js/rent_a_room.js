@@ -10,9 +10,9 @@
 
  -------------------------------------------------------------------------------------------------*/
 /*
- 1. Global variables and information containing room data information that will propagate through the rest of the application
- Each Room holds different values contained in a data array. Amenities
- The idea is that the Landlord only has to set-up the amenities only when setting up the application, Selecting a room by click will automatically show features associated
+1. Global variables and information containing room data information that will propagate through the rest of the application
+Each Room holds different values contained in a data array. Amenities
+The idea is that the Landlord only has to set-up the amenities only when setting up the application, Selecting a room by click will automatically show features associated
  with the room selected
  ----------------------------------------------------------------------------------------------------*/
 
@@ -80,14 +80,12 @@ $('#post').keyup(function () {
 
 /*-------------------------------------------------------------------------------------------------
  3. DatePicker JQuery function - allows user to pick and select available date that will be added along with the Post title
- -------------------------------------------------------------------------------------------------*/
-$(document).ready(function () {
+-------------------------------------------------------------------------------------------------*/
+$(document).ready(function(){
     $('#datepicker').datepicker({
-        onSelect: function () {
-            var selected_date = $('#datepicker').val();
+        onSelect: function() { var selected_date =$('#datepicker').val();
 
-            $('#datepicker_output').html("Available: " + selected_date);
-        } });
+            $('#datepicker_output').html("Available: "+selected_date); } });
 
 });
 
@@ -132,6 +130,7 @@ $('#calculate').click(function () {
     var last_month = $('#checkbox_last_month').is(':checked') ? parseInt($('#checkbox_last_month').val()) : 0;
 
 
+
     var rent = parseInt($('#rent').text());
 
     var amount = security + last_month;
@@ -139,11 +138,11 @@ $('#calculate').click(function () {
     var total = parseInt(amount + rent);
 
 
-    if (chosen_room == null) {
+    if(chosen_room == null){
         alert("you must select a room first");
     }
 
-    else {
+    else{
         $('#output').html("Total move-in requirements: $" + total);
     }
 
@@ -157,7 +156,7 @@ $('#location').keyup(function () {
 
     var post = $(this).val();
 
-    $('#location_output').html("in " + post);
+    $('#location_output').html("in "+ post);
 
     var length = location_output.length;
 
@@ -272,7 +271,7 @@ function loadMap(lat, long) {
 }
 
 
-/*-------------------------------------------------------------------------------------------------
+ /*-------------------------------------------------------------------------------------------------
  7. Ad Message title
  -------------------------------------------------------------------------------------------------*/
 $('#room_ad').keyup(function () {
@@ -342,10 +341,11 @@ $('.contact').click(function () {
 });
 
 
+
 /*-------------------------------------------------------------------------------------------------
- 10. Refresh button for preview div
+10. Refresh button for preview div
  -------------------------------------------------------------------------------------------------*/
-$('#refresh-btn').click(function () {
+$('#refresh-btn').click(function() {
 
     // Cleardivs for preview
 
@@ -361,6 +361,7 @@ $('#refresh-btn').click(function () {
     $('#roomAd_output').html("");
     $('#about_you_output').html("");
     $('#amenities').html("");
+    $('#contact-info').html("");
 
 
     // Cleardivs for preview
@@ -369,12 +370,15 @@ $('#refresh-btn').click(function () {
     $('#about_you').val("");
 
 
+
+
+
 });
 
 /*-------------------------------------------------------------------------------------------------
  11.Print
  -------------------------------------------------------------------------------------------------*/
-$('#print-btn').click(function () {
+$('#print-btn').click(function() {
 
     // Goal: Open the card in a new tab
 
@@ -387,7 +391,7 @@ $('#print-btn').click(function () {
     // Now that we have the entire canvas let's focus on creating our new tab
 
     // For the new tab, we need to basically construct all the pieces we need for any HTML page starting with a start <html> tag.
-    var new_tab_contents = '<html>';
+    var new_tab_contents  = '<html>';
 
     // (Note the += symbol is used to add content onto an existing variable, so basically we're just adding onto our new_tab_contents variable one line at a time)
     new_tab_contents += '<head>';
@@ -401,7 +405,7 @@ $('#print-btn').click(function () {
     // Ok, our card is ready to go, we just need to work on opening the tab
 
     // Here's how we tell JavaScript to create a new tab (tabs are controlled by the "window" object).
-    var new_tab = window.open();
+    var new_tab =  window.open();
 
     // Now within that tab, we want to open access to the document so we can make changes
     new_tab.document.open();

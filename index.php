@@ -39,7 +39,7 @@
 
         <!--Select Available of your post -->
         <h2>Select Available Room date </h2>
-        <input type='text' class='input_text' id="datepicker">
+        <input type='text' class ='input_text' id="datepicker">
 
 
         <!-- Search Specific location / City-->
@@ -66,11 +66,9 @@
         <!-- Available room picture gallery select on click -->
         <h2> Select Move_in Requirements </h2>
 
-        <input type='checkbox' name='Security' class='input_text' id='checkbox_security' value=' '/>Security Deposit $
-        <span id='security'></span>
+        <input type='checkbox' name='Security' id='checkbox_security' value=''/>Security Deposit $ <span id='security'></span>
         <br>
-        <input type='checkbox' name='LastMonth' class='input_text' id='checkbox_last_month' value=''/> Last month rent $
-        <span id='last_month'></span>
+        <input type='checkbox' name='LastMonth'  id='checkbox_last_month' value=''/> Last month rent $ <span id='last_month'></span>
         <br>
 
 
@@ -82,17 +80,17 @@
         <br>
 
         <h2>Enter About room message here </h2>
-        <textarea id='room_ad' maxlength="250"></textarea>
+        <textarea  id='room_ad' maxlength="250"></textarea>
         <span class='error' id='roomAd-error'></span>
         <br>
 
         <div>
-            <h2>Enter roomamate Requirements here </h2>
-            <textarea id='about_you' maxlength="250"></textarea>
-            <span class='error' id='about_you_error'></span>
-            <br>
+        <h2>Enter roomamate Requirements here </h2>
+        <textarea  id='about_you' maxlength="250"></textarea>
+        <span class='error' id='about_you_error'></span>
+        <br>
 
-        </div>
+           </div>
         <br>
         <!-- Contact info -->
         <h2>Landlord Contact info</h2>
@@ -118,10 +116,8 @@
             <div id='intro'>
                 <div id='posting_title'></div>
                 <div id='dollar_sign'></div>
-                <div id='rent' style="display: none;">
-             </div>
-
-            <!--End of intro div-->
+                <div id='rent' style="display: none;"></div>
+            </div><!--End of intro div-->
 
             <div id='datepicker_output'></div>
             <div id='location_output'></div>
@@ -135,13 +131,11 @@
                 <div id='amenities'></div>
                 <div class="move_in_req"></div>
                 <div id='output'></div>
-
-
             <!--end of RoomFeatures-->
 
-            <div id='ad_container'>
+            <div id ='ad_container'>
                 <div id='roomAd_output'></div>
-                <div id='about_you_output'></div>
+                <div id= 'about_you_output'></div>
             </div>
 
             <div id='adInfo'>
@@ -149,7 +143,6 @@
             </div><!--End of adInfo-->
 
             <div id='contact-info'></div>
-            </div>
         </div>
     </div>
 

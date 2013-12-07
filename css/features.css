@@ -57,8 +57,9 @@ Recipient
     float: none;
     white-space: pre-wrap;
     color: blueviolet;
-    font-family: Geneva;
+    font-family:Geneva;
 }
+
 
 #about_you_output {
     font-size: 20px;
@@ -72,24 +73,27 @@ Recipient
     float: none;
     white-space: pre-wrap;
 
-    font-family: Geneva;
+    font-family:Geneva;
+
+
+
+
 
 }
-
 #
 
 .error {
     color: red;
 }
 
-#datepicker {
-    color: lightseagreen;
+#datepicker{
+    color:lightseagreen;
     font-size: 15px;
-    maargin-left: 1em;
+    maargin-left:1em;
 }
 
-#datepicker_output {
-    color: lightseagreen;
+#datepicker_output{
+    color:lightseagreen;
     font-size: 30px;
 }
 
@@ -101,7 +105,7 @@ Recipient
     position: inherit;
     top: 150px;
     border: 1em;
-    float: left;
+    float:left;
 }
 
 #amenities {
@@ -117,8 +121,10 @@ Recipient
     font-size: 30px;
     top: 150px;
     margin-left: 1em;
-    margin-right: 1em;
-    color: cadetblue;;
+    margin-right:1em;
+    color: cadetblue;
+;
+
 
 }
 
@@ -126,5 +132,5 @@ Recipient
     font-size: 25px;
     color: blue;
     text-align: center;
-    float: left;
+    float:left;
 }
